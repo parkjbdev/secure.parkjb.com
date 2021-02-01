@@ -1,6 +1,8 @@
 import express from 'express'
 import login from './router/login'
-import register from "./router/register";
+import register from './router/register';
+import check from './router/check'
+import path from "path";
 
 const app = express()
 const port = process.env.PORT || 3000
@@ -13,8 +15,11 @@ app.use('/', (req, res, next) => {
 	next()
 })
 
+app.use(express.static(path.join(__dirname, '../public')))
+
 app.use('/login', login.router)
 app.use('/register', register.router)
+app.use('/check', check.router)
 
 app.listen(port, () => {
 	console.log('listening')

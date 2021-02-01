@@ -10,10 +10,10 @@ router.route('/')
 		const create = () => {
 			return UserModel.createUser(username, password)
 		}
-		const respond = (isAdmin?: boolean) => {
+		const respond = (user: any) => {
 			res.json({
 				message: 'registered successfully',
-				admin: isAdmin
+				user
 			})
 		}
 		const onError = (error: Error) => {
@@ -23,7 +23,7 @@ router.route('/')
 		}
 		UserModel.findOneByUsername(username)
 			.then(create)
-			.then(() => respond(false))
+			.then(respond)
 			.catch(onError)
 	})
 

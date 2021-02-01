@@ -12,10 +12,10 @@ router.route('/')
     const create = () => {
         return UserDB_1.default.createUser(username, password);
     };
-    const respond = (isAdmin) => {
+    const respond = (user) => {
         res.json({
             message: 'registered successfully',
-            admin: isAdmin
+            user
         });
     };
     const onError = (error) => {
@@ -25,7 +25,7 @@ router.route('/')
     };
     UserDB_1.default.findOneByUsername(username)
         .then(create)
-        .then(() => respond(false))
+        .then(respond)
         .catch(onError);
 });
 exports.default = { router };

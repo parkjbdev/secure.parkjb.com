@@ -9,7 +9,7 @@ const register_1 = __importDefault(require("./router/register"));
 const app = express_1.default();
 const port = process.env.PORT || 3000;
 app.use(express_1.default.json());
-app.use(express_1.default.urlencoded({ extended: true }));
+app.use(express_1.default.urlencoded({ extended: false }));
 app.use('/', (req, res, next) => {
     console.log(req.ip, ':', req.method, req.originalUrl);
     next();

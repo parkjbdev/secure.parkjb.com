@@ -4,7 +4,7 @@ import {User, UserModel} from "./interface/User";
 import {UserSchema} from "./schema/UserSchema";
 
 const conn
-	= mongoose.createConnection(connection.userDB, { useNewUrlParser: true, useUnifiedTopology: true })
+	= mongoose.createConnection(connection.userDB, { useNewUrlParser: true, useUnifiedTopology: true, useCreateIndex: true })
 
 conn.once('open', () => {
 	console.log(`connected to db server ${conn.host}`)

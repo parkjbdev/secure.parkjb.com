@@ -1,0 +1,5 @@
+signConfig.json
+dbConnection.json
+.idea
+node_modules
+.sass-cache

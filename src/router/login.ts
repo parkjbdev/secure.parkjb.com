@@ -43,7 +43,7 @@ router.route('/')
 				message: error.message
 			})
 		}
-
+		console.log(req.body)
 		User.findOneByUsername(username)
 			.then(check)
 			.then(respond)

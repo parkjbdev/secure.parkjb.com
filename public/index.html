@@ -10,18 +10,18 @@
 </head>
 <body>
 
-<div class="body"></div>
+<div class="body fadein"></div>
 <div class="grad"></div>
-
 <div class="header">
     <div>parkjb<span>Login</span></div>
 </div>
 
-<div class="login">
-    <input type="text" placeholder="ID" name="user">
+<form action="./login" method="post" class="login">
+    <input type="text" placeholder="ID" name="username">
     <input type="password" placeholder="Password" name="password">
-    <input type="button" value="Login">
-</div>
+    <input type="submit" value="Login">
+</form>
 
+<script src="js/fadein.js"></script>
 </body>
 </html>

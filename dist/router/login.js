@@ -45,6 +45,7 @@ router.route('/')
             message: error.message
         });
     };
+    console.log(req.body);
     UserDB_1.default.findOneByUsername(username)
         .then(check)
         .then(respond)

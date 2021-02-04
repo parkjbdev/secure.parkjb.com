@@ -21,11 +21,11 @@
     <form action="./register" method="post" class="form">
         <input type="text" placeholder="NAME" name="username" autofocus required>
         <input type="text" placeholder="ID" name="userid" required>
-        <input type="text" placeholder="E-MAIL" name="email" required>
-        <input type="text" placeholder="Phone Number" name="phone" required>
-        <input type="password" placeholder="Password" name="password" required>
-        <input type="password" placeholder="Password Check" name="password" required>
-        <div class="g-recaptcha" data-sitekey="6LcsO0YaAAAAAIKueN5Fh0pVUiJqmPOh0mfv9rFB"
+<!--        <input type="text" placeholder="E-MAIL" name="email" required>-->
+<!--        <input type="text" placeholder="Phone Number" name="phone" required>-->
+        <input type="password" placeholder="Password" name="password" id="password" required>
+        <label><input type="checkbox" onclick="toggleShowPW()" style="width: auto; height: auto;margin: 5px;">Show Password</label>
+        <div class="g-recaptcha" data-sitekey="6LfdYEkaAAAAAKUifXqWAD0CtEf5-MoxgtDb7fOv"
         style="margin-left: auto;margin-right: auto;"></div>
         <input type="submit" value="Register">
     </form>
@@ -33,6 +33,7 @@
 
 <script src="./js/fadein.js"></script>
 <script src="./js/fancybg.js"></script>
+<script src="./js/toggleShowPW.js"></script>
 
 </body>
 </html>

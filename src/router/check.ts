@@ -8,7 +8,7 @@ const router = express.Router()
 router.route('/')
 	.get((req, res) => {
 		const token: string = req.headers['x-access-token'] as string || req.query.token as string
-		console.log(checkToken(token))
+		
 		if(!token) return res.status(403).json({
 			success: false,
 			message: 'not logged in'

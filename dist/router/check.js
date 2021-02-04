@@ -6,12 +6,10 @@ Object.defineProperty(exports, "__esModule", { value: true });
 const express_1 = __importDefault(require("express"));
 const jsonwebtoken_1 = __importDefault(require("jsonwebtoken"));
 const signConfig_json_1 = __importDefault(require("../config/signConfig.json"));
-const checkToken_1 = __importDefault(require("../checkToken"));
 const router = express_1.default.Router();
 router.route('/')
     .get((req, res) => {
     const token = req.headers['x-access-token'] || req.query.token;
-    console.log(checkToken_1.default(token));
     if (!token)
         return res.status(403).json({
             success: false,

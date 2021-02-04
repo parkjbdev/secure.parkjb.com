@@ -7,9 +7,7 @@ const router = express.Router()
 router.route('/')
 	.post((req, res) => {
 		const {username, password} = req.body
-		const create = () => {
-			return UserModel.createUser(username, password)
-		}
+		const create = () => UserModel.createUser(username, password)
 		const respond = (user: any) => {
 			res.json({
 				message: 'registered successfully',

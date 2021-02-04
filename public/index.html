@@ -6,22 +6,27 @@
           content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Login</title>
-    <link rel="stylesheet" href="stylesheet/login.css">
+    <!-- CSS only -->
+    <link rel="stylesheet" href="./stylesheet/fancybg.css">
+    <link rel="stylesheet" href="./stylesheet/default.css">
 </head>
 <body>
 
-<div class="body fadein"></div>
-<div class="grad"></div>
-<div class="header">
-    <div>parkjb<span>Login</span></div>
+<div class="container">
+    <div class="header">
+        <div>parkjb<span>Login</span></div>
+    </div>
+
+    <form action="./login" method="post" class="form">
+        <input type="text" placeholder="ID" name="username" autofocus required>
+        <input type="password" placeholder="Password" name="password" required>
+        <input type="submit" value="Login">
+    </form>
+
 </div>
 
-<form action="./login" method="post" class="login">
-    <input type="text" placeholder="ID" name="username">
-    <input type="password" placeholder="Password" name="password">
-    <input type="submit" value="Login">
-</form>
+<script src="./js/fadein.js"></script>
+<script src="./js/fancybg.js"></script>
 
-<script src="js/fadein.js"></script>
 </body>
 </html>

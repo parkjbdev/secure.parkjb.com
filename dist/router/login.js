@@ -6,7 +6,7 @@ Object.defineProperty(exports, "__esModule", { value: true });
 const express_1 = __importDefault(require("express"));
 const jsonwebtoken_1 = __importDefault(require("jsonwebtoken"));
 const UserDB_1 = __importDefault(require("../db/UserDB"));
-const signConfig_json_1 = __importDefault(require("./signConfig.json"));
+const signConfig_json_1 = __importDefault(require("../signConfig.json"));
 const router = express_1.default.Router();
 router.route('/')
     .post((req, res) => {
@@ -45,7 +45,6 @@ router.route('/')
             message: error.message
         });
     };
-    console.log(req.body);
     UserDB_1.default.findOneByUsername(username)
         .then(check)
         .then(respond)

@@ -1,6 +1,6 @@
 import {Document, Schema} from 'mongoose'
 import {User, UserModel} from '../interface/User'
-import config from '../../router/signConfig.json'
+import config from '../../signConfig.json'
 import crypto from 'crypto'
 
 export const UserSchema: Schema<User, UserModel> = new Schema({

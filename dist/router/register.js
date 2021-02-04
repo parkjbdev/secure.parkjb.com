@@ -9,9 +9,7 @@ const router = express_1.default.Router();
 router.route('/')
     .post((req, res) => {
     const { username, password } = req.body;
-    const create = () => {
-        return UserDB_1.default.createUser(username, password);
-    };
+    const create = () => UserDB_1.default.createUser(username, password);
     const respond = (user) => {
         res.json({
             message: 'registered successfully',

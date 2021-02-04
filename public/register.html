@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Register</title>
+    <!-- CSS only -->
+    <link rel="stylesheet" href="./stylesheet/fancybg.css">
+    <link rel="stylesheet" href="stylesheet/default.css">
+    <script src="https://www.google.com/recaptcha/api.js" async defer></script>
+</head>
+<body>
+
+<div class="container">
+    <div class="header">
+        <div>parkjb<span>Register</span></div>
+    </div>
+
+    <form action="./register" method="post" class="form">
+        <input type="text" placeholder="NAME" name="username" autofocus required>
+        <input type="text" placeholder="ID" name="userid" required>
+        <input type="text" placeholder="E-MAIL" name="email" required>
+        <input type="text" placeholder="Phone Number" name="phone" required>
+        <input type="password" placeholder="Password" name="password" required>
+        <input type="password" placeholder="Password Check" name="password" required>
+        <div class="g-recaptcha" data-sitekey="6LcsO0YaAAAAAIKueN5Fh0pVUiJqmPOh0mfv9rFB"
+        style="margin-left: auto;margin-right: auto;"></div>
+        <input type="submit" value="Register">
+    </form>
+</div>
+
+<script src="./js/fadein.js"></script>
+<script src="./js/fancybg.js"></script>
+
+</body>
+</html>

@@ -1,19 +1,22 @@
 import express from "express";
 import jwt from 'jsonwebtoken'
-import config from './signConfig.json'
+import config from '../signConfig.json'
+import checkToken from "../checkToken";
+
 const router = express.Router()
 
 router.route('/')
 	.get((req, res) => {
 		const token: string = req.headers['x-access-token'] as string || req.query.token as string
+		console.log(checkToken(token))
 		if(!token) return res.status(403).json({
 			success: false,
 			message: 'not logged in'
 		})
 
-		const p = new Promise((resolve, reject) => {
+		const verify = new Promise((resolve, reject) => {
 			jwt.verify(token, config.secret, ((err: any, decoded: any) => {
-				if(err)	reject(err)
+				if (err) reject(err)
 				resolve(decoded)
 			}))
 		})
@@ -32,7 +35,7 @@ router.route('/')
 			})
 		}
 
-		p.then(respond).catch(onError)
+		verify.then(respond).catch(onError)
 
 		return
 	})

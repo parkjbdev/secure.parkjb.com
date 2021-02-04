@@ -1,7 +1,7 @@
 import express from "express";
 import jwt from 'jsonwebtoken';
 import User from '../db/UserDB'
-import config from './signConfig.json'
+import config from '../signConfig.json'
 
 const router = express.Router()
 
@@ -43,7 +43,7 @@ router.route('/')
 				message: error.message
 			})
 		}
-		console.log(req.body)
+
 		User.findOneByUsername(username)
 			.then(check)
 			.then(respond)

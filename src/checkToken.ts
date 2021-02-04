@@ -1,5 +1,5 @@
 import jwt from 'jsonwebtoken'
-import config from './signConfig.json'
+import config from '../config/signConfig.json'
 
 const checkToken = (token: string) => {
 	if(!token)	return false;

@@ -1,6 +1,6 @@
 import express from "express";
 import jwt from 'jsonwebtoken'
-import config from '../signConfig.json'
+import config from '../../config/signConfig.json'
 import checkToken from "../checkToken";
 
 const router = express.Router()

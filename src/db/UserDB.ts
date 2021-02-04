@@ -1,5 +1,5 @@
 import mongoose from "mongoose";
-import connection from './dbConnection.json'
+import connection from '../../config/dbConnection.json'
 import {User, UserModel} from "./interface/User";
 import {UserSchema} from "./schema/UserSchema";
 

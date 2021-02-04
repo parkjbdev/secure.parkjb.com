@@ -64,6 +64,20 @@
   display: inline-block;
 }
 
+.container .form input[type=checkbox] {
+  width: 16px;
+  height: 16px;
+  margin: 3px;
+  margin-bottom: 10px;
+}
+
+.container .form label {
+  display: flex;
+  font-family: 'Exo', sans-serif;
+  font-size: 16px;
+  font-weight: 300;
+}
+
 .container .form input[type=submit] {
   height: 35px;
   background: #fff;

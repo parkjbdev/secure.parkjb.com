@@ -4,7 +4,7 @@ var __importDefault = (this && this.__importDefault) || function (mod) {
 };
 Object.defineProperty(exports, "__esModule", { value: true });
 const mongoose_1 = __importDefault(require("mongoose"));
-const dbConnection_json_1 = __importDefault(require("./dbConnection.json"));
+const dbConnection_json_1 = __importDefault(require("../config/dbConnection.json"));
 const UserSchema_1 = require("./schema/UserSchema");
 const conn = mongoose_1.default.createConnection(dbConnection_json_1.default.userDB, { useNewUrlParser: true, useUnifiedTopology: true, useCreateIndex: true });
 conn.once('open', () => {

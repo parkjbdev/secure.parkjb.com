@@ -5,7 +5,7 @@ var __importDefault = (this && this.__importDefault) || function (mod) {
 Object.defineProperty(exports, "__esModule", { value: true });
 const express_1 = __importDefault(require("express"));
 const jsonwebtoken_1 = __importDefault(require("jsonwebtoken"));
-const signConfig_json_1 = __importDefault(require("../signConfig.json"));
+const signConfig_json_1 = __importDefault(require("../config/signConfig.json"));
 const checkToken_1 = __importDefault(require("../checkToken"));
 const router = express_1.default.Router();
 router.route('/')

@@ -4,7 +4,7 @@ var __importDefault = (this && this.__importDefault) || function (mod) {
 };
 Object.defineProperty(exports, "__esModule", { value: true });
 const jsonwebtoken_1 = __importDefault(require("jsonwebtoken"));
-const signConfig_json_1 = __importDefault(require("./signConfig.json"));
+const signConfig_json_1 = __importDefault(require("./config/signConfig.json"));
 const checkToken = (token) => {
     if (!token)
         return false;

@@ -1,7 +1,7 @@
 import express from "express";
 import jwt from 'jsonwebtoken';
 import User from '../db/UserDB'
-import config from '../../config/signConfig.json'
+import config from '../config/signConfig.json'
 
 const router = express.Router()
 

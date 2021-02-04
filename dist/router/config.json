@@ -1,8 +1,0 @@
-{
-    "secret": "haha",
-    "signOptions": {
-        "expiresIn": "1d",
-        "issuer": "auth.parkjb.com",
-        "subject": "userInfo"
-    }
-}

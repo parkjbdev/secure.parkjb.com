@@ -6,8 +6,8 @@ const router = express.Router()
 
 router.route('/')
 	.post((req, res) => {
-		const {username, password} = req.body
-		const create = () => UserModel.createUser(username, password)
+		const {userid, username, password} = req.body
+		const create = () => UserModel.createUser(userid, username, password)
 		const respond = (user: any) => {
 			res.json({
 				message: 'registered successfully',
@@ -19,7 +19,7 @@ router.route('/')
 				message: error.message
 			})
 		}
-		UserModel.findOneByUsername(username)
+		UserModel.findOneByUserId(userid)
 			.then(create)
 			.then(respond)
 			.catch(onError)

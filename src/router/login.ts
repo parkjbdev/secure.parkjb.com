@@ -7,7 +7,7 @@ const router = express.Router()
 
 router.route('/')
 	.post((req, res) => {
-		const {username, password} = req.body
+		const {userid, password} = req.body
 
 		const check = (user: any): Promise<string> => {
 			if (!user) throw new Error('login failed')
@@ -16,6 +16,7 @@ router.route('/')
 			const payload = {
 				_id: user._id,
 				username: user.username,
+				userid: user.userid,
 				admin: user.admin,
 			}
 			const secret = config.secret
@@ -44,7 +45,7 @@ router.route('/')
 			})
 		}
 
-		User.findOneByUsername(username)
+		User.findOneByUserId(userid)
 			.then(check)
 			.then(respond)
 			.catch(onError)

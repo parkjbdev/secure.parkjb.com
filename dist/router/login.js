@@ -10,7 +10,7 @@ const signConfig_json_1 = __importDefault(require("../config/signConfig.json"));
 const router = express_1.default.Router();
 router.route('/')
     .post((req, res) => {
-    const { username, password } = req.body;
+    const { userid, password } = req.body;
     const check = (user) => {
         if (!user)
             throw new Error('login failed');
@@ -19,6 +19,7 @@ router.route('/')
         const payload = {
             _id: user._id,
             username: user.username,
+            userid: user.userid,
             admin: user.admin,
         };
         const secret = signConfig_json_1.default.secret;
@@ -45,7 +46,7 @@ router.route('/')
             message: error.message
         });
     };
-    UserDB_1.default.findOneByUsername(username)
+    UserDB_1.default.findOneByUserId(userid)
         .then(check)
         .then(respond)
         .catch(onError);

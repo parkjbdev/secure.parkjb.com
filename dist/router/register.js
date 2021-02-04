@@ -8,8 +8,8 @@ const UserDB_1 = __importDefault(require("../db/UserDB"));
 const router = express_1.default.Router();
 router.route('/')
     .post((req, res) => {
-    const { username, password } = req.body;
-    const create = () => UserDB_1.default.createUser(username, password);
+    const { userid, username, password } = req.body;
+    const create = () => UserDB_1.default.createUser(userid, username, password);
     const respond = (user) => {
         res.json({
             message: 'registered successfully',
@@ -21,7 +21,7 @@ router.route('/')
             message: error.message
         });
     };
-    UserDB_1.default.findOneByUsername(username)
+    UserDB_1.default.findOneByUserId(userid)
         .then(create)
         .then(respond)
         .catch(onError);

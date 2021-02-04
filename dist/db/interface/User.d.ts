@@ -1,5 +1,6 @@
 import mongoose from "mongoose";
 export interface User extends mongoose.Document {
+    userid: string;
     username: string;
     password: string;
     admin: boolean;
@@ -7,7 +8,7 @@ export interface User extends mongoose.Document {
     assignAdmin(): Promise<any>;
 }
 export interface UserModel extends mongoose.Model<User> {
-    createUser(username: string, password: string): Promise<Document>;
-    findOneByUsername(username: string): Promise<User>;
+    createUser(userid: string, username: string, password: string): Promise<Document>;
+    findOneByUserId(userid: string): Promise<User>;
 }
 //# sourceMappingURL=User.d.ts.map
